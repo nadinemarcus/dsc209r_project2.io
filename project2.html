@@ -1,0 +1,209 @@
+<html lang="en"><head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body data-new-gr-c-s-check-loaded="14.1258.0" data-gr-ext-installed="">
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Nadine Marcus</strong> — <em>nemarcus@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Serious accountability in the NYPD is rare, despite high-profile incidents of police misconduct.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="pro_proposition.png" alt="">
+          <figcaption>There are consistently low shares of complaints against the NYPD that are taken seriously despite ongoing controversy and calls for reform.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+            <li><strong>Event Annotations (-2):</strong> The inclusion of national incidents like George Floyd’s death and Eric Garner’s death is emotionally charged and contextually distant from NYPD complaint data. These selective references frame the viewer to associate NYPD misconduct with systemic police brutality, amplifying the perception of persistent accountability failure.</li>
+            <li><strong>Loaded Language (-1):</strong> The phrase “taken seriously” is subjective and undefined. By equating it to “charges after board disposition,” I guide interpretation toward a more negative view of NYPD accountability rather than allowing viewers to form independent conclusions. Other general ideas were considering complaints that were "substantiated" and looking at officers that were promoted after a substantiated complaint of higher severity.</li>
+            <li><strong>Scaling (+2):</strong> The scale is preserved from 0–1 (0%–100%), providing an honest proportional view of substantiation rates. This maintains numerical integrity and prevents exaggeration of the trends.</li>
+            <li><strong>Color & Framing (0):</strong> The red tones draw focus to the low proportion of substantiated cases, associating the data with urgency or wrongdoing. The contrasting cooler colors for context (blue annotations) subtly reinforce a moral framing of inaction or neglect.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="anti_proposition.png" alt="">
+          <figcaption>The majority of complaints filed against the NYPD end as resolved or exonerated and reflect proactively with high-profile police incidents.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+            <li><strong>Positive Color Framing (+1):</strong> The green line representing “Complaints Resolved / Exonerated” evokes stability and improvement, subconsciously reinforcing trust and progress. The color choice frames these outcomes as legitimate accountability rather than dismissal.</li>
+            <li><strong>De-emphasis of Negative Outcomes (-1):</strong> The “Taken Seriously” line is thinner, lighter, and less visually salient, which minimizes attention to the low rate of serious disciplinary action, softening negative impressions of NYPD oversight.</li>
+            <li><strong>Event Selection (-2):</strong> The chosen timeline annotations selectively highlight moments following major reforms or public incidents that align with increases in exoneration rates. This selectively curated context promotes the idea of NYPD responsiveness without showing contradictory examples.</li>
+            <li><strong>Annotations and Arrows (-2):</strong> Directional annotations emphasize areas of improvement or stability, directing the viewer’s eye toward segments that support the “improvement” narrative even when broader trends are ambiguous.</li>
+            <li><strong>Dropping 2020 Data (+2): Since the data was grouped by year received, 2020 only having three data points associated with it and being used as a share rate value would have output misleading results that would have been misrepresentative of the data.</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>The decisions going into the project as a whole was harder than anticipated. There was a lot of trial and error with the data manipulations and having outcomes that would support the narrative I had in mind.
+            Ideas I had in mind included considering the interactions between substantiated claims (text extraction) and promoted officers which didn't provide any notable data trends, substantiated claims share, and other text extractions that could be categorized.
+            The idea for data manipulation when I saw the dataset was to include the external police brutality events into the timeline, and the complaints that had charges or arrests associated had trends that had some variation and can be manipulated to suit the narrative I wanted to push.
+
+            Ethical analysis and visualization is based on data transparency and bias. It is easy to look for manipulated axes or biased chosen language that might be included in a graph. Colors and design are ways to subtlely shift the viewer's stance and where they are drawn to which can be powerful
+            with a graph that can draw your attention in multiple directions.
+
+            "Acceptable" persuasive choices are ones where there is transparency in any data transformations and a lack of language bias. If there is external data involved, it should have a direct correlation with the data being shown as a level of context, not to shift the narrative towards nonexistent trends.
+            The choices of color, selectively choosing what data to extract from the dataset (text extraction), and how to add my bias into the visualization without anything outright misleading or manipulated involved trial-and-error to a level I didn't anticipate, but that did mean every choice made in the graphs was intentional and strategic.
+        </p>
+      </section>
+    </main>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
